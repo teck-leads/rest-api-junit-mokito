@@ -18,9 +18,9 @@ public class LibraryService {
 		this.libraryRepository = libraryRepository;
 	}
 
-	public boolean checkIfBookAlreayExists(Library library) {
+	public boolean checkIfBookAlreayExists(String id) {
 
-		Optional<Library> findById = libraryRepository.findById(library.getId());
+		Optional<Library> findById = libraryRepository.findById(id);
 		if (!findById.isPresent()) {
 			return false;
 		}
